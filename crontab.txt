@@ -4,10 +4,10 @@
 # Uses the included cronjob.sh script for extra leverage.
 
 # 11AM EDT (-0400) == 1500 UTC
-0 15 * * * /path/to/dtop-twitter-poster/cronjob.sh -0400 /path/to/dtop-twitter-poster/dtop-twitter-poster.py go
+0 15 * * * /path/to/dtop-twitter-poster/cronjob.sh -0400 /path/to/dtop-twitter-poster/dtop-twitter-poster.py --go
 
 # 11AM EST (-0500) == 1600 UTC
-0 16 * * * /path/to/dtop-twitter-poster/cronjob.sh -0500 /path/to/dtop-twitter-poster/dtop-twitter-poster.py go
+0 16 * * * /path/to/dtop-twitter-poster/cronjob.sh -0500 /path/to/dtop-twitter-poster/dtop-twitter-poster.py --go
 
 # 1 hour before reset == 2300 UTC
-0 23 * * * /path/to/dtop-twitter-poster/venv/bin/python /path/to/dtop-twitter-poster/dtop-twitter-poster.py go
+0 23 * * * /path/to/dtop-twitter-poster/venv/bin/python /path/to/dtop-twitter-poster/dtop-twitter-poster.py --go

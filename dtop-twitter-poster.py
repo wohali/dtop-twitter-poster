@@ -211,7 +211,7 @@ def main(args):
 
     # read config data
     mydir = os.path.dirname(os.path.abspath(__file__))
-    if '--settings' in args:
+    if '--settings' in args and args['--settings']:
         fpath = os.path.abspath(args['--settings'])
     else:
         fpath = os.path.join(mydir, "settings.json")
