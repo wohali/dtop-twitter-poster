@@ -1,0 +1,9 @@
+arrow==0.4.2
+docopt==0.6.2
+emoji==0.4.5
+python-dateutil==2.6.0
+requests==2.13.0
+six==1.10.0
+twitter==1.17.1
+vobject==0.9.4.1
+wheel==0.24.0

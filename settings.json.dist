@@ -1,0 +1,45 @@
+{
+  "config": {
+    "ical_url": "https://calendar.google.com/calendar/ical/...",
+    "token": "XXX",
+    "token_secret": "XXX",
+    "consumer_key": "XXX",
+    "consumer_secret": "XXX",
+    "images": "./images"
+  },
+  "templates": {
+    "dailys": [
+      "Join [DTOP] in #GuildWars2 for {} tonight starting {}, {} Eastern time! #GW2",
+      "Our #GuildWars2 {} event starts tonight {}, {} Eastern time. Join [DTOP] for the win! #GW2",
+      "Love #GW2 {}? [DTOP]'s running it tonight starting {}, {} Eastern time. Let's roll! #GuildWars2"
+    ],
+    "coretyriadailys": [
+      "Join [DTOP] in #GuildWars2 for {} tonight starting {}, {} Eastern time! #GW2",
+      "Our #GuildWars2 {} event starts tonight {}, {} Eastern time. Join [DTOP] for the win! #GW2",
+      "Need a #GW2 dungeon, fractal, jumping puzzle or achievement? [DTOP]'s {} is tonight starting {}, {} Eastern!"
+    ],
+    "guildmissionnightlys": [
+      "Running low on #GW2 Guild Commendations? [DTOP]'s got ya, starting {1}. Play with the best! #GuildWars2",
+      "Better eat your brunch now: [DTOP] is running #GW2 {} {}, and you'll need both hands! #GuildWars2",
+      "Hey you! Come play #GuildWars2 with [DTOP] today. We're running {} {}. You know you want to!",
+      "\"Hello.\" Winter Snows wants you to join [DTOP] for {} {}. Just don't send him 7 copper :moneybag: :wink: #GuildWars2"
+    ],
+    "nightlys": [
+      "Running low on #GW2 {} currency? [DTOP]'s got ya, starting {}. Play with the best! #GuildWars2",
+      "Better eat your dinner now: [DTOP] is running #GW2 {} {}, and you'll need both hands! #GuildWars2",
+      "Hey you! Come play #GuildWars2 with [DTOP] tonight. We're running {} {}. You know you want to!",
+      "'Hello.' Winter Snows wants you to join [DTOP] for {} {}. Just don't send him 7 copper :moneybag: :wink: #GuildWars2"
+    ],
+    "coretyrianightlys": [
+      "Need the Not So Secret JP, Arah tokens, a fractal or cheevo? [DTOP]'s {} starts {}. #GuildWars2 #GW2",
+      "Hey you! Come play #GuildWars2 with [DTOP] tonight. We're running {} {}. You know you want to!",
+      "Struggling with the Nightmare Fractal? Resbot 2000 is here to help! [DTOP] #GW2 {} is {}. #GuildWars2"
+    ],
+    "mondays": [
+      "This weekend's #GuildWars2 [DTOP] maps will be {} (Fri) and {} (Sat). Hope to see you there! #GW2"
+    ],
+    "thursdays": [
+      "Reminder: [DTOP] is running #GW2 {} Friday and {} Saturday. Don't miss our expert meta map action. #GuildWars2"
+    ]
+  }
+}
