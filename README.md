@@ -1,7 +1,5 @@
 # [DTOP] Automated Google Calendar to Twitter bot
 
-Can dump to a raw hex file, or to a human-readable text file.
-
 Roughly, this does the following:
 1. Reads iCal file from our Google Events calendar.
 2. Finds any events in the next 4 or 24 hours, including recurring events.
