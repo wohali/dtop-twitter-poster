@@ -225,7 +225,8 @@ def main(args):
 
     # Special case: on Thursday, expand window to include Fri and Sat
     if day == "Thursday":
-        sat = now.replace(days=+2, hour=23, minute=59)
+        nowet = now.to('US/Eastern')
+        sat = nowet.replace(days=+2, hour=23, minute=59)
         delta = sat - now
         window = delta.days*60*24 + delta.seconds // 60
 
