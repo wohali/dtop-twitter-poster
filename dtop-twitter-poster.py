@@ -66,20 +66,23 @@ def deltatime(tt, now=arrow.utcnow()):
     # Calculates time between now and event start and returns it
     # in a human readable form.
     deltamins = (tt - now).seconds // 60
-    if deltamins == 0:
+    deltafives = int(round(deltamins/5.0)*5)
+    if deltafives == 0:
         return "RIGHT NOW"
-    elif deltamins <= 90:
+    elif deltamins <= 5:
         ms = "" if deltamins == 1 else "s"
-        return "in just {} minute{}".format(deltamins, ms)
+        return "IN JUST {} MINUTE{}".format(deltamins, ms)
+    elif deltafives <= 90:
+        return "in just {} minutes".format(deltafives)
     else:
-        deltahrs = deltamins // 60
+        deltahrs = deltafives // 60
         hs = "" if deltahrs == 1 else "s"
-        deltamins = deltamins % 60
-        if deltamins == 0:
+        deltamins = deltafives % 60
+        deltafives = int(round(deltamins/5.0)*5)
+        if deltafives == 0:
             return "in just {} hour{}".format(deltahrs, hs)
-        ms = "" if deltamins == 1 else "s"
-        return "in just {} hour{} {} minute{}".format(
-            deltahrs, hs, deltamins, ms)
+        return "in just {} hour{} {} minutes".format(
+            deltahrs, hs, deltafives)
     
 def readgcalevents(ical_url):
     # Reads iCal file from Google Events calendar (or static file).
