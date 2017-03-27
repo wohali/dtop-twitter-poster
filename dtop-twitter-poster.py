@@ -235,10 +235,12 @@ def main(args):
 
     # Special case: on Monday, use Thursday's window
     if day == "Monday":
-        now = now.replace(days=+3)
-        sat = now.replace(days=+2, hour=23, minute=59)
-        delta = sat - now
+        nowet = now.to('US/Eastern')
+        thu = nowet.replace(days=+3)
+        sat = thu.replace(days=+2, hour=23, minute=59)
+        delta = sat - thu
         window = delta.days*60*24 + delta.seconds // 60
+        now = thu
 
     # Special case: for all evening runs, use short window
     if evening:
@@ -260,17 +262,24 @@ def main(args):
         imgpath = os.path.join(mydir, settings["config"]["images"])
     if evening:
         # Only tweet immediate next event at night
+        if len(events) < 1:
+            raise Exception("Couldn't find event!")
         ename, etime = events[0]
         img = getimage(ename, imgpath)
         tweets.append( ( nightlyreminder(ename, etime, templates, now), img ) )
     elif day == "Monday":
         events = [x for x in events if x[0] != "Guild Missions"]
+        if len(events) != 2:
+            raise Exception("Couldn't find 2 weekend meta map events!")
         tweets.append( ( mondayreminder(events[0][0], events[1][0], templates), None ) )
     elif day == "Thursday":
         events = [x for x in events if x[0] != "Guild Missions"]
+        if len(events) != 2:
+            raise Exception("Couldn't find 2 weekend meta map events!")
         tweets.append( ( thursdayreminder(events[0][0], events[1][0], templates), None ) )
     elif day == "Saturday":  # (and not evening)
-        # TODO Fix Guild Mission rendering
+        if len(events) != 2:
+            raise Exception("Couldn't find 2 Saturday events!")
         ename, etime = events[0]
         img = getimage(ename, imgpath)
         tweets.append( ( nightlyreminder(ename, etime, templates, now), img) )
@@ -278,6 +287,8 @@ def main(args):
         img = getimage(ename, imgpath)
         tweets.append( ( dailyreminder(ename, etime, templates), img ) )
     else:
+        if len(events) < 1:
+            raise Exception("Couldn't find event!")
         ename, etime = events[0]
         img = getimage(ename, imgpath)
         tweets.append( ( dailyreminder(ename, etime, templates), img ) )
