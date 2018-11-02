@@ -1,4 +1,6 @@
 *~
+Thumbs.db
+*.stackdump
 *.swp
 settings.json
 venv/
